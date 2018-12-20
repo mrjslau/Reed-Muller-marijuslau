@@ -49,6 +49,7 @@
     <Compile Include="Channel.cs" />
     <Compile Include="Encoder.cs" />
     <Compile Include="GenMatrixGenerator.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

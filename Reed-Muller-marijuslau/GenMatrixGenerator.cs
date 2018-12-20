@@ -43,6 +43,11 @@ namespace Reed_Muller_marijuslau
                     take /= 2;
                 }
 
+                if (R > 1)
+                {
+
+                }
+
                 // DEBUG PRINT
                 for (int i = 0; i < dimension; i++)
                 {

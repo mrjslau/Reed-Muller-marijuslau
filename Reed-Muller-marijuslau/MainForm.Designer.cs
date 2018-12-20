@@ -64,23 +64,23 @@
             this.bitStringCoding.Controls.Add(this.bitInputGroup);
             this.bitStringCoding.Location = new System.Drawing.Point(13, 13);
             this.bitStringCoding.Name = "bitStringCoding";
-            this.bitStringCoding.Size = new System.Drawing.Size(947, 517);
+            this.bitStringCoding.Size = new System.Drawing.Size(1336, 517);
             this.bitStringCoding.TabIndex = 0;
             this.bitStringCoding.TabStop = false;
             this.bitStringCoding.Text = "Bitų kodavimas";
             // 
             // BitFalseBox
             // 
-            this.BitFalseBox.Location = new System.Drawing.Point(640, 348);
+            this.BitFalseBox.Location = new System.Drawing.Point(814, 338);
             this.BitFalseBox.Multiline = true;
             this.BitFalseBox.Name = "BitFalseBox";
-            this.BitFalseBox.Size = new System.Drawing.Size(299, 143);
+            this.BitFalseBox.Size = new System.Drawing.Size(516, 143);
             this.BitFalseBox.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(635, 309);
+            this.label6.Location = new System.Drawing.Point(814, 310);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 25);
             this.label6.TabIndex = 14;
@@ -88,16 +88,16 @@
             // 
             // BitDecodedVectorBox
             // 
-            this.BitDecodedVectorBox.Location = new System.Drawing.Point(640, 86);
+            this.BitDecodedVectorBox.Location = new System.Drawing.Point(814, 85);
             this.BitDecodedVectorBox.Multiline = true;
             this.BitDecodedVectorBox.Name = "BitDecodedVectorBox";
-            this.BitDecodedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitDecodedVectorBox.Size = new System.Drawing.Size(516, 143);
             this.BitDecodedVectorBox.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(635, 58);
+            this.label5.Location = new System.Drawing.Point(809, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 25);
             this.label5.TabIndex = 12;
@@ -105,10 +105,10 @@
             // 
             // BitTransmittedVectorBox
             // 
-            this.BitTransmittedVectorBox.Location = new System.Drawing.Point(330, 348);
+            this.BitTransmittedVectorBox.Location = new System.Drawing.Point(330, 338);
             this.BitTransmittedVectorBox.Multiline = true;
             this.BitTransmittedVectorBox.Name = "BitTransmittedVectorBox";
-            this.BitTransmittedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitTransmittedVectorBox.Size = new System.Drawing.Size(478, 143);
             this.BitTransmittedVectorBox.TabIndex = 11;
             // 
             // label4
@@ -125,7 +125,7 @@
             this.BitCodedVectorBox.Location = new System.Drawing.Point(330, 86);
             this.BitCodedVectorBox.Multiline = true;
             this.BitCodedVectorBox.Name = "BitCodedVectorBox";
-            this.BitCodedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitCodedVectorBox.Size = new System.Drawing.Size(478, 143);
             this.BitCodedVectorBox.TabIndex = 9;
             // 
             // label3
@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 541);
+            this.ClientSize = new System.Drawing.Size(1361, 541);
             this.Controls.Add(this.bitStringCoding);
             this.Name = "MainForm";
             this.Text = "Reed-Muller kodavimas, siuntimas kanalu ir dekodavimas";

@@ -45,18 +45,24 @@ namespace Reed_Muller_marijuslau
 
         private void bitEncodeButton_Click(object sender, EventArgs e)
         {
-            GenMatrixGenerator gmGen = new GenMatrixGenerator(RInt, MInt);
-            //GenMatrix gm = new GenMatrix();
-
-            if (BitStringTextBox.Length != gmGen.Dimension)
+            if (Helpers.CheckParams(bitMInputBox.Text, bitRInputBox.Text, bitQInputBox.Text, BitStringTextBox))
             {
-                MessageBox.Show("Žinutė turi būti " + Convert.ToString(gmGen.Dimension) + " simbolių ilgio");
+                GenMatrixGenerator gmGen = new GenMatrixGenerator(RInt, MInt);
+
+                if (BitStringTextBox.Length != gmGen.Dimension)
+                {
+                    MessageBox.Show("Žinutė turi būti " + Convert.ToString(gmGen.Dimension) + " simbolių ilgio");
+                }
+                else
+                {
+                    Encoder encoder = new Encoder();
+                    BitCodedVectorBox.Text = encoder.EncodeBits(BitStringTextBox, gmGen);
+                    BitTransmittedVectorBox.Text = Channel.Transmit(BitCodedVectorBox.Text, Convert.ToDouble(QDouble));
+                }
             }
             else
             {
-                Encoder encoder = new Encoder();
-                BitCodedVectorBox.Text = encoder.EncodeBits(BitStringTextBox, gmGen);
-                BitTransmittedVectorBox.Text = Channel.Transmit(BitCodedVectorBox.Text, Convert.ToDouble(QDouble));
+                MessageBox.Show("Įveskite sveikuosius skaičius m ir r, tarp 0.0 ir 1.0 lauką q ir bitų eilutę");
             }
 
         }
