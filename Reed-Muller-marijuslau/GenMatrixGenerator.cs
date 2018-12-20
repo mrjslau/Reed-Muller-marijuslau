@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Reed_Muller_marijuslau
 {
@@ -37,18 +38,32 @@ namespace Reed_Muller_marijuslau
                 int take = N / 2;
                 for (int m = 1; m <= M; m++)
                 {
-                    Console.WriteLine("TAKE:" + take);
                     int[] nextVec = GetIntVector(N, take);
                     Matrix[m] = nextVec;
                     take /= 2;
                 }
+                int currLenght = M + 1;
 
                 if (R > 1)
                 {
+                    for (int cl = currLenght; cl < Dimension; cl ++)
+                    {
+                        Matrix[cl] = GetAdditionalVector(cl);
 
+                        for (int xi = 0; xi < cl+1; xi++)
+                        {
+                            string vec = "";
+                            for (int xj = 0; xj < N; xj++)
+                            {
+                                vec = vec + Matrix[xi][xj].ToString();
+                            }
+                            Console.WriteLine(xi + " gen matricos vektorius: " + vec);
+                        }
+                        Console.WriteLine("----------------------cl:" + cl);
+                    }
                 }
 
-                // DEBUG PRINT
+                /*/ DEBUG PRINT
                 for (int i = 0; i < dimension; i++)
                 {
                     string vec = "";
@@ -58,8 +73,57 @@ namespace Reed_Muller_marijuslau
                     }
                     Console.WriteLine(i + " gen matricos vektorius: " + vec);
                 }
-                // ----------
+                // ----------  */
             }
+        }
+
+        int[] GetAdditionalVector(int lenght)
+        {
+            int[] vector = new int[N];
+            int currLenght = lenght;
+            for (int i = 1; i < currLenght; i++)
+            {
+                for (int j = i + 1; j < currLenght; j++)
+                {
+                    vector = VectorsAnd(Matrix[i], Matrix[j]);
+                    if (!IsThereAnEqual(vector))
+                        return vector;
+                }
+            }
+            Console.WriteLine("Cia NETURETU ateiti");
+            return vector;
+        }
+
+        int[] VectorsAnd(int[] vec1, int[] vec2)
+        {
+            int[] resVec = new int[N];
+            for(int i = 0; i < N; i++)
+            {
+                if (vec1[i] == vec2[i] && vec1[i] == 1)
+                {
+                    resVec[i] = 1;
+                }
+                else
+                {
+                    resVec[i] = 0;
+                }
+            }
+            return resVec;
+        }
+
+        bool IsThereAnEqual(int[] vec)
+        {
+            foreach(int[] v in Matrix)
+            {
+                if (v != null)
+                {
+                    if (vec.SequenceEqual(v))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private static int Factorial(int i)

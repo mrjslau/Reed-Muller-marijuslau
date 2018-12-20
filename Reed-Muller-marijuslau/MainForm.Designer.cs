@@ -80,7 +80,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(814, 310);
+            this.label6.Location = new System.Drawing.Point(809, 310);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 25);
             this.label6.TabIndex = 14;
@@ -88,7 +88,7 @@
             // 
             // BitDecodedVectorBox
             // 
-            this.BitDecodedVectorBox.Location = new System.Drawing.Point(814, 85);
+            this.BitDecodedVectorBox.Location = new System.Drawing.Point(814, 86);
             this.BitDecodedVectorBox.Multiline = true;
             this.BitDecodedVectorBox.Name = "BitDecodedVectorBox";
             this.BitDecodedVectorBox.Size = new System.Drawing.Size(516, 143);
@@ -97,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(809, 57);
+            this.label5.Location = new System.Drawing.Point(814, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 25);
             this.label5.TabIndex = 12;
@@ -114,7 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(325, 309);
+            this.label4.Location = new System.Drawing.Point(325, 310);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(259, 25);
             this.label4.TabIndex = 10;
