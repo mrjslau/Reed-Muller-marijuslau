@@ -32,6 +32,12 @@ namespace Reed_Muller_marijuslau
             get { return Convert.ToInt32(bitMInputBox.Text); }
         }
 
+        public double QDouble
+        {
+            get { return Convert.ToDouble(bitQInputBox.Text); }
+        }
+
+
         public string BitStringTextBox
         {
             get { return bitStringInputBox.Text; }
@@ -50,7 +56,7 @@ namespace Reed_Muller_marijuslau
             {
                 Encoder encoder = new Encoder();
                 BitCodedVectorBox.Text = encoder.EncodeBits(BitStringTextBox, gmGen);
-                //BitTransmittedVectorBox.Text = 
+                BitTransmittedVectorBox.Text = Channel.Transmit(BitCodedVectorBox.Text, Convert.ToDouble(QDouble));
             }
 
         }

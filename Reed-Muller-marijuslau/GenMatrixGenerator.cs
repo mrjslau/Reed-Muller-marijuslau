@@ -51,7 +51,7 @@ namespace Reed_Muller_marijuslau
                     {
                         vec = vec + Matrix[i][j].ToString();
                     }
-                    Console.WriteLine(i + " vektorius: " + vec);
+                    Console.WriteLine(i + " gen matricos vektorius: " + vec);
                 }
                 // ----------
             }
@@ -76,13 +76,11 @@ namespace Reed_Muller_marijuslau
             {
                 for (int j = 0; j < take; j++)
                 {
-                     Console.WriteLine("Index: " + index + " i:" + i + " j:" + j + " vektoriui skiria- " + 1);
                     vector[index] = 1;
                     index++;
                 }
                 for (int j = 0; j < take; j++)
                 {
-                     Console.WriteLine("Index: " + index + " i:" + i + " j:" + j + " vektoriui skiria- " + 0);
                     vector[index] = 0;
                     index++;
                 }
