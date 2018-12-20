@@ -34,14 +34,14 @@ namespace Reed_Muller_marijuslau
             }
             if (R > 0)
             {
-                int take = 1;
+                int take = N / 2;
                 for (int m = 1; m <= M; m++)
                 {
+                    Console.WriteLine("TAKE:" + take);
                     int[] nextVec = GetIntVector(N, take);
                     Matrix[m] = nextVec;
-                    take *= 2;
+                    take /= 2;
                 }
-
 
                 // DEBUG PRINT
                 for (int i = 0; i < dimension; i++)
@@ -71,18 +71,19 @@ namespace Reed_Muller_marijuslau
             int[] vector = new int[length];
             int index = 0;
 
-            for(int i = 0; i < length; i++)
+            int i = 0;
+            while (i < length)
             {
                 for (int j = 0; j < take; j++)
                 {
-                    // Console.WriteLine("Index: " + index + " i:" + i + " j:" + j);
-                    vector[index] = 0;
+                     Console.WriteLine("Index: " + index + " i:" + i + " j:" + j + " vektoriui skiria- " + 1);
+                    vector[index] = 1;
                     index++;
                 }
                 for (int j = 0; j < take; j++)
                 {
-                    // Console.WriteLine("Index: " + index + " i:" + i + " j:" + j);
-                    vector[index] = 1;
+                     Console.WriteLine("Index: " + index + " i:" + i + " j:" + j + " vektoriui skiria- " + 0);
+                    vector[index] = 0;
                     index++;
                 }
                 i += take * 2;

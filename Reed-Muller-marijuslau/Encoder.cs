@@ -14,16 +14,16 @@ namespace Reed_Muller_marijuslau
         {
             int[][] matrix = vectorMultiply(bitString, generator.Matrix, generator.Dimension, generator.N);
 
-            Console.WriteLine("----------");
+            //Console.WriteLine("----------");
             for(int i = 0; i < generator.Dimension; i++)
             {
                 for(int j = 0; j < generator.N; j++)
                 {
-                    Console.Write(matrix[i][j]);
+                    //Console.Write(matrix[i][j]);
                 }
-                Console.Write("\n");
+                //Console.Write("\n");
             }
-            Console.WriteLine("----------");
+            //Console.WriteLine("----------");
 
             string encodedVector = "";
             for(int d = 0; d < generator.N; d++)
@@ -48,7 +48,7 @@ namespace Reed_Muller_marijuslau
 
         private int[][] vectorMultiply(string bitString, int[][] genMatrix, int dimension, int lenght)
         {
-            Console.WriteLine("***");
+            //Console.WriteLine("***");
             int[][] multipliedMatrix = new int[dimension][];
             int index = 0;
             foreach(char a in bitString)
@@ -58,16 +58,16 @@ namespace Reed_Muller_marijuslau
                 foreach(int j in genMatrix[index])
                 {
                     
-                    Console.Write(((int)char.GetNumericValue(a) * j).ToString());
+                    //Console.Write(((int)char.GetNumericValue(a) * j).ToString());
                     
 
                     multipliedMatrix[index][newMatrixIndex] = (int)char.GetNumericValue(a) * j;
                     newMatrixIndex++;
                 }
                 index++;
-                Console.Write("\n");
+                //Console.Write("\n");
             }
-            Console.WriteLine("***");
+            //Console.WriteLine("***");
             return multipliedMatrix;
         }
     }

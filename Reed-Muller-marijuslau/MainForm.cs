@@ -50,6 +50,7 @@ namespace Reed_Muller_marijuslau
             {
                 Encoder encoder = new Encoder();
                 BitCodedVectorBox.Text = encoder.EncodeBits(BitStringTextBox, gmGen);
+                //BitTransmittedVectorBox.Text = 
             }
 
         }
