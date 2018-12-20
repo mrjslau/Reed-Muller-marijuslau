@@ -7,6 +7,8 @@ namespace Reed_Muller_marijuslau
     {
         public int R, M, N, Dimension;
         public int[][] Matrix;
+        public int[][] WorkMatrix;
+        public bool StartFlag = false;
 
         public GenMatrixGenerator(int r, int m)
         {
@@ -46,10 +48,30 @@ namespace Reed_Muller_marijuslau
 
                 if (R > 1)
                 {
-                    for (int cl = currLenght; cl < Dimension; cl ++)
+                    WorkMatrix = Matrix;
+                    int loopCount = 1;
+                    for (int cl = currLenght; cl < Dimension; cl++)
                     {
-                        Matrix[cl] = GetAdditionalVector(cl);
+                        int[] checkVector = GetAdditionalVector(currLenght, loopCount);
 
+                        if (checkVector == null && !StartFlag)
+                        {
+                            Console.WriteLine("PATEKO CIA");
+                            loopCount = currLenght;
+                            currLenght = cl;
+                            checkVector = GetAdditionalVector(cl, loopCount);
+                        }
+                        else if (StartFlag)
+                        {
+                            loopCount++;
+                            StartFlag = false;
+                            Console.WriteLine("*Start flag reset*");
+                            checkVector = GetAdditionalVector(cl, loopCount);
+                        }
+                        Matrix[cl] = checkVector;
+
+
+                        // DEBUG LOOP PRINT
                         for (int xi = 0; xi < cl+1; xi++)
                         {
                             string vec = "";
@@ -59,38 +81,32 @@ namespace Reed_Muller_marijuslau
                             }
                             Console.WriteLine(xi + " gen matricos vektorius: " + vec);
                         }
-                        Console.WriteLine("----------------------cl:" + cl);
+                        Console.WriteLine("----------------------cl was:" + cl);
                     }
                 }
-
-                /*/ DEBUG PRINT
-                for (int i = 0; i < dimension; i++)
-                {
-                    string vec = "";
-                    for (int j = 0; j < N; j++)
-                    {
-                        vec = vec + Matrix[i][j].ToString();
-                    }
-                    Console.WriteLine(i + " gen matricos vektorius: " + vec);
-                }
-                // ----------  */
             }
         }
 
-        int[] GetAdditionalVector(int lenght)
+        int[] GetAdditionalVector(int lenght, int startPoint)
         {
-            int[] vector = new int[N];
+            int[] vector = null;
             int currLenght = lenght;
-            for (int i = 1; i < currLenght; i++)
+            for (int i = startPoint; i < currLenght; i++)
             {
+                if (i > startPoint)
+                {
+                    StartFlag = true;
+                    Console.WriteLine("Start point:" + startPoint);
+                    return vector;
+                }
                 for (int j = i + 1; j < currLenght; j++)
                 {
                     vector = VectorsAnd(Matrix[i], Matrix[j]);
                     if (!IsThereAnEqual(vector))
                         return vector;
                 }
+                vector = null;
             }
-            Console.WriteLine("Cia NETURETU ateiti");
             return vector;
         }
 
