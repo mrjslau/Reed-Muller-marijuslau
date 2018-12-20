@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.bitStringCoding = new System.Windows.Forms.GroupBox();
-            this.bitFalseBox = new System.Windows.Forms.TextBox();
+            this.BitFalseBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bitDecodedVectorBox = new System.Windows.Forms.TextBox();
+            this.BitDecodedVectorBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bitTransmittedVectorBox = new System.Windows.Forms.TextBox();
+            this.BitTransmittedVectorBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.bitCodedVectorBox = new System.Windows.Forms.TextBox();
+            this.BitCodedVectorBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bitInputGroup = new System.Windows.Forms.GroupBox();
-            this.bitDecodeButton = new System.Windows.Forms.Button();
+            this.BitDecodeButton = new System.Windows.Forms.Button();
             this.bitEncodeButton = new System.Windows.Forms.Button();
             this.bitStringInputBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,13 +53,13 @@
             // 
             // bitStringCoding
             // 
-            this.bitStringCoding.Controls.Add(this.bitFalseBox);
+            this.bitStringCoding.Controls.Add(this.BitFalseBox);
             this.bitStringCoding.Controls.Add(this.label6);
-            this.bitStringCoding.Controls.Add(this.bitDecodedVectorBox);
+            this.bitStringCoding.Controls.Add(this.BitDecodedVectorBox);
             this.bitStringCoding.Controls.Add(this.label5);
-            this.bitStringCoding.Controls.Add(this.bitTransmittedVectorBox);
+            this.bitStringCoding.Controls.Add(this.BitTransmittedVectorBox);
             this.bitStringCoding.Controls.Add(this.label4);
-            this.bitStringCoding.Controls.Add(this.bitCodedVectorBox);
+            this.bitStringCoding.Controls.Add(this.BitCodedVectorBox);
             this.bitStringCoding.Controls.Add(this.label3);
             this.bitStringCoding.Controls.Add(this.bitInputGroup);
             this.bitStringCoding.Location = new System.Drawing.Point(13, 13);
@@ -69,13 +69,13 @@
             this.bitStringCoding.TabStop = false;
             this.bitStringCoding.Text = "Bitų kodavimas";
             // 
-            // bitFalseBox
+            // BitFalseBox
             // 
-            this.bitFalseBox.Location = new System.Drawing.Point(640, 348);
-            this.bitFalseBox.Multiline = true;
-            this.bitFalseBox.Name = "bitFalseBox";
-            this.bitFalseBox.Size = new System.Drawing.Size(299, 143);
-            this.bitFalseBox.TabIndex = 15;
+            this.BitFalseBox.Location = new System.Drawing.Point(640, 348);
+            this.BitFalseBox.Multiline = true;
+            this.BitFalseBox.Name = "BitFalseBox";
+            this.BitFalseBox.Size = new System.Drawing.Size(299, 143);
+            this.BitFalseBox.TabIndex = 15;
             // 
             // label6
             // 
@@ -86,13 +86,13 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Klaidos:";
             // 
-            // bitDecodedVectorBox
+            // BitDecodedVectorBox
             // 
-            this.bitDecodedVectorBox.Location = new System.Drawing.Point(640, 86);
-            this.bitDecodedVectorBox.Multiline = true;
-            this.bitDecodedVectorBox.Name = "bitDecodedVectorBox";
-            this.bitDecodedVectorBox.Size = new System.Drawing.Size(299, 143);
-            this.bitDecodedVectorBox.TabIndex = 13;
+            this.BitDecodedVectorBox.Location = new System.Drawing.Point(640, 86);
+            this.BitDecodedVectorBox.Multiline = true;
+            this.BitDecodedVectorBox.Name = "BitDecodedVectorBox";
+            this.BitDecodedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitDecodedVectorBox.TabIndex = 13;
             // 
             // label5
             // 
@@ -103,13 +103,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Dekoduotas vektorius:";
             // 
-            // bitTransmittedVectorBox
+            // BitTransmittedVectorBox
             // 
-            this.bitTransmittedVectorBox.Location = new System.Drawing.Point(330, 348);
-            this.bitTransmittedVectorBox.Multiline = true;
-            this.bitTransmittedVectorBox.Name = "bitTransmittedVectorBox";
-            this.bitTransmittedVectorBox.Size = new System.Drawing.Size(299, 143);
-            this.bitTransmittedVectorBox.TabIndex = 11;
+            this.BitTransmittedVectorBox.Location = new System.Drawing.Point(330, 348);
+            this.BitTransmittedVectorBox.Multiline = true;
+            this.BitTransmittedVectorBox.Name = "BitTransmittedVectorBox";
+            this.BitTransmittedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitTransmittedVectorBox.TabIndex = 11;
             // 
             // label4
             // 
@@ -120,13 +120,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Iš kanalo išėjęs vektorius:";
             // 
-            // bitCodedVectorBox
+            // BitCodedVectorBox
             // 
-            this.bitCodedVectorBox.Location = new System.Drawing.Point(330, 86);
-            this.bitCodedVectorBox.Multiline = true;
-            this.bitCodedVectorBox.Name = "bitCodedVectorBox";
-            this.bitCodedVectorBox.Size = new System.Drawing.Size(299, 143);
-            this.bitCodedVectorBox.TabIndex = 9;
+            this.BitCodedVectorBox.Location = new System.Drawing.Point(330, 86);
+            this.BitCodedVectorBox.Multiline = true;
+            this.BitCodedVectorBox.Name = "BitCodedVectorBox";
+            this.BitCodedVectorBox.Size = new System.Drawing.Size(299, 143);
+            this.BitCodedVectorBox.TabIndex = 9;
             // 
             // label3
             // 
@@ -139,7 +139,7 @@
             // 
             // bitInputGroup
             // 
-            this.bitInputGroup.Controls.Add(this.bitDecodeButton);
+            this.bitInputGroup.Controls.Add(this.BitDecodeButton);
             this.bitInputGroup.Controls.Add(this.bitEncodeButton);
             this.bitInputGroup.Controls.Add(this.bitStringInputBox);
             this.bitInputGroup.Controls.Add(this.label2);
@@ -155,14 +155,14 @@
             this.bitInputGroup.TabStop = false;
             this.bitInputGroup.Text = "Įvestis";
             // 
-            // bitDecodeButton
+            // BitDecodeButton
             // 
-            this.bitDecodeButton.Location = new System.Drawing.Point(6, 345);
-            this.bitDecodeButton.Name = "bitDecodeButton";
-            this.bitDecodeButton.Size = new System.Drawing.Size(300, 88);
-            this.bitDecodeButton.TabIndex = 8;
-            this.bitDecodeButton.Text = "Dekoduoti";
-            this.bitDecodeButton.UseVisualStyleBackColor = true;
+            this.BitDecodeButton.Location = new System.Drawing.Point(6, 345);
+            this.BitDecodeButton.Name = "BitDecodeButton";
+            this.BitDecodeButton.Size = new System.Drawing.Size(300, 88);
+            this.BitDecodeButton.TabIndex = 8;
+            this.BitDecodeButton.Text = "Dekoduoti";
+            this.BitDecodeButton.UseVisualStyleBackColor = true;
             // 
             // bitEncodeButton
             // 
@@ -252,15 +252,15 @@
         private System.Windows.Forms.GroupBox bitInputGroup;
         private System.Windows.Forms.Label bitParamsLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox bitFalseBox;
+        private System.Windows.Forms.TextBox BitFalseBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox bitDecodedVectorBox;
+        private System.Windows.Forms.TextBox BitDecodedVectorBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox bitTransmittedVectorBox;
+        private System.Windows.Forms.TextBox BitTransmittedVectorBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox bitCodedVectorBox;
+        private System.Windows.Forms.TextBox BitCodedVectorBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button bitDecodeButton;
+        private System.Windows.Forms.Button BitDecodeButton;
         private System.Windows.Forms.Button bitEncodeButton;
         private System.Windows.Forms.TextBox bitStringInputBox;
         private System.Windows.Forms.Label label2;

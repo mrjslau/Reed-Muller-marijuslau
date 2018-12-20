@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Reed_Muller_marijuslau
 {
     class GenMatrixGenerator
     {
-        int R, M, N;
-        int[][] Matrixx;
-        public string[] Matrix { get; set; } 
+        public int R, M, N, Dimension;
+        public int[][] Matrix;
 
         public GenMatrixGenerator(int r, int m)
         {
@@ -22,48 +17,20 @@ namespace Reed_Muller_marijuslau
 
         void GenerateMatrix()
         {
-            List<string> bitList = new List<string>();
-
             Console.WriteLine("[R=" + R + ", M=" + M + "]");
-            int test = 1;
+            int dimension = 1;
             for (int r = 1; r <= R; r++)                                   
             {
-                Console.WriteLine("test = " + test);
-                test += Factorial(M) / (Factorial(r) * Factorial(M - r));
+                dimension += Factorial(M) / (Factorial(r) * Factorial(M - r));
+                Dimension = dimension;
             }
-            Console.WriteLine("Turėtų būti k = " + test + " " + N + "-ilgio žodžių");
-
-            GetOnesVector(N);
-            string v0 = GetOnesVector(N);
-            bitList.Add(v0);
-
-            if (R > 0)
-            {
-                int take = 1;
-                for(int m = 1; m <= M; m++)
-                {
-                    string nextVec = GetVector(N, take); 
-                    bitList.Add(nextVec);
-                    take *= 2;
-                }
-            }
-
-            if (R > 1)
-            {
-
-            }
-
-            int tmpi = 1;
-            foreach (string bits in bitList)
-            {
-                Console.WriteLine(tmpi + " vektorius: " + bits);
-                tmpi++;
-            }
-
-            Matrixx = new int[test][];
+            Console.WriteLine("Turi būti k = " + dimension + " " + N + "-ilgio vektoriu");
+     
+            Matrix = new int[dimension][];
+            Matrix[0] = new int[N];
             for(int i = 0; i < N; i++)
             {
-                Matrixx[0][i] = 1;
+                Matrix[0][i] = 1;
             }
             if (R > 0)
             {
@@ -71,11 +38,23 @@ namespace Reed_Muller_marijuslau
                 for (int m = 1; m <= M; m++)
                 {
                     int[] nextVec = GetIntVector(N, take);
-                    Matrixx[m] = nextVec;
+                    Matrix[m] = nextVec;
                     take *= 2;
                 }
-            }
 
+
+                // DEBUG PRINT
+                for (int i = 0; i < dimension; i++)
+                {
+                    string vec = "";
+                    for (int j = 0; j < N; j++)
+                    {
+                        vec = vec + Matrix[i][j].ToString();
+                    }
+                    Console.WriteLine(i + " vektorius: " + vec);
+                }
+                // ----------
+            }
         }
 
         private static int Factorial(int i)
@@ -87,51 +66,26 @@ namespace Reed_Muller_marijuslau
             return i * Factorial(i - 1);
         }
 
-        public static string GetOnesVector(int length)
-        {
-            string vector = "";
-
-            while (vector.Length != length)
-            {
-                vector = "1" + vector;
-            }
-
-            return vector;
-        }
-
-        public static string GetVector(int length, int take)
-        {
-            string vector = "";
-
-            while (vector.Length != length)
-            {
-                for(int i = 0; i < take; i++)
-                {
-                    vector = vector + "0";
-                }
-                for (int i = 0; i < take; i++)
-                {
-                    vector = vector + "1";
-                }
-            }
-
-            return vector;
-        }
-
         public static int[] GetIntVector(int length, int take)
         {
             int[] vector = new int[length];
+            int index = 0;
 
             for(int i = 0; i < length; i++)
             {
                 for (int j = 0; j < take; j++)
                 {
-                    vector[i] = 0;
+                    // Console.WriteLine("Index: " + index + " i:" + i + " j:" + j);
+                    vector[index] = 0;
+                    index++;
                 }
                 for (int j = 0; j < take; j++)
                 {
-                    vector[i] = 1;
+                    // Console.WriteLine("Index: " + index + " i:" + i + " j:" + j);
+                    vector[index] = 1;
+                    index++;
                 }
+                i += take * 2;
             }
 
             return vector;

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenMatrix.cs" />
+    <Compile Include="Encoder.cs" />
     <Compile Include="GenMatrixGenerator.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

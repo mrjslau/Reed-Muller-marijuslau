@@ -42,7 +42,15 @@ namespace Reed_Muller_marijuslau
             GenMatrixGenerator gmGen = new GenMatrixGenerator(RInt, MInt);
             //GenMatrix gm = new GenMatrix();
 
-
+            if (BitStringTextBox.Length != gmGen.Dimension)
+            {
+                MessageBox.Show("Žinutė turi būti " + Convert.ToString(gmGen.Dimension) + " simbolių ilgio");
+            }
+            else
+            {
+                Encoder encoder = new Encoder();
+                BitCodedVectorBox.Text = encoder.EncodeBits(BitStringTextBox, gmGen);
+            }
 
         }
     }
