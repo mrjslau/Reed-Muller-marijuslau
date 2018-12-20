@@ -4,6 +4,7 @@ namespace Reed_Muller_marijuslau
 {
     static class Helpers
     {
+        // Tikrinami parametrai m, r, q ir bitu eilute, kurie ivedami 'MainForm' formoje
         public static bool CheckParams(string m, string r, string q, string vector)
         {
             return (Regex.IsMatch(m, @"^\d+$") && Regex.IsMatch(r, @"^\d+$") &&

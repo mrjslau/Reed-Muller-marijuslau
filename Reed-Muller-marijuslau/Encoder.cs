@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Reed_Muller_marijuslau
 {
@@ -10,20 +6,10 @@ namespace Reed_Muller_marijuslau
     {
         public List<string> ResultList = new List<string>();
 
+        // Vektorių kodavimo funkcija
         public string EncodeBits(string bitString, GenMatrixGenerator generator)
         {
-            int[][] matrix = vectorMultiply(bitString, generator.Matrix, generator.Dimension, generator.N);
-
-            //Console.WriteLine("----------");
-            for(int i = 0; i < generator.Dimension; i++)
-            {
-                for(int j = 0; j < generator.N; j++)
-                {
-                    //Console.Write(matrix[i][j]);
-                }
-                //Console.Write("\n");
-            }
-            //Console.WriteLine("----------");
+            int[][] matrix = VectorMultiply(bitString, generator.Matrix, generator.Dimension, generator.N);
 
             string encodedVector = "";
             for(int d = 0; d < generator.N; d++)
@@ -46,9 +32,9 @@ namespace Reed_Muller_marijuslau
             return encodedVector;
         }
 
-        private int[][] vectorMultiply(string bitString, int[][] genMatrix, int dimension, int lenght)
+        // Vektoriaus * matricos daugybos funkcija
+        private int[][] VectorMultiply(string bitString, int[][] genMatrix, int dimension, int lenght)
         {
-            //Console.WriteLine("***");
             int[][] multipliedMatrix = new int[dimension][];
             int index = 0;
             foreach(char a in bitString)
@@ -57,17 +43,11 @@ namespace Reed_Muller_marijuslau
                 int newMatrixIndex = 0;
                 foreach(int j in genMatrix[index])
                 {
-                    
-                    //Console.Write(((int)char.GetNumericValue(a) * j).ToString());
-                    
-
                     multipliedMatrix[index][newMatrixIndex] = (int)char.GetNumericValue(a) * j;
                     newMatrixIndex++;
                 }
                 index++;
-                //Console.Write("\n");
             }
-            //Console.WriteLine("***");
             return multipliedMatrix;
         }
     }

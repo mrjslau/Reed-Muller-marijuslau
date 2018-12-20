@@ -7,7 +7,6 @@ namespace Reed_Muller_marijuslau
     {
         public int R, M, N, Dimension;
         public int[][] Matrix;
-        public int[][] WorkMatrix;
         public bool StartFlag = false;
 
         public GenMatrixGenerator(int r, int m)
@@ -18,6 +17,7 @@ namespace Reed_Muller_marijuslau
             GenerateMatrix();
         }
 
+        // Generuojančiosios matricos sugeneravimo funkcija pagal duotus parametrus
         void GenerateMatrix()
         {
             Console.WriteLine("[R=" + R + ", M=" + M + "]");
@@ -48,7 +48,6 @@ namespace Reed_Muller_marijuslau
 
                 if (R > 1)
                 {
-                    WorkMatrix = Matrix;
                     int loopCount = 1;
                     for (int cl = currLenght; cl < Dimension; cl++)
                     {
@@ -56,7 +55,6 @@ namespace Reed_Muller_marijuslau
 
                         if (checkVector == null && !StartFlag)
                         {
-                            Console.WriteLine("PATEKO CIA");
                             loopCount = currLenght;
                             currLenght = cl;
                             checkVector = GetAdditionalVector(cl, loopCount);
@@ -72,21 +70,22 @@ namespace Reed_Muller_marijuslau
 
 
                         // DEBUG LOOP PRINT
-                        for (int xi = 0; xi < cl+1; xi++)
-                        {
-                            string vec = "";
-                            for (int xj = 0; xj < N; xj++)
-                            {
-                                vec = vec + Matrix[xi][xj].ToString();
-                            }
-                            Console.WriteLine(xi + " gen matricos vektorius: " + vec);
-                        }
-                        Console.WriteLine("----------------------cl was:" + cl);
+                        //for (int xi = 0; xi < cl+1; xi++)
+                        //{
+                        //    string vec = "";
+                        //    for (int xj = 0; xj < N; xj++)
+                        //    {
+                        //        vec = vec + Matrix[xi][xj].ToString();
+                        //    }
+                        //    Console.WriteLine(xi + " gen matricos vektorius: " + vec);
+                        //}
+                        //Console.WriteLine("----------------------cl was:" + cl);
                     }
                 }
             }
         }
 
+        // Funkcija skirta gauti vektoriams nuo 2-ojo lygio
         int[] GetAdditionalVector(int lenght, int startPoint)
         {
             int[] vector = null;
@@ -110,6 +109,7 @@ namespace Reed_Muller_marijuslau
             return vector;
         }
 
+        // Funkcija lyginanti vektorius loginio AND operatoriaus principu pagal kiekvieną bita
         int[] VectorsAnd(int[] vec1, int[] vec2)
         {
             int[] resVec = new int[N];
@@ -127,6 +127,7 @@ namespace Reed_Muller_marijuslau
             return resVec;
         }
 
+        // Funkcija grąžinanti true, jeigu toks vektorius jau egzistuoja
         bool IsThereAnEqual(int[] vec)
         {
             foreach(int[] v in Matrix)
@@ -142,16 +143,8 @@ namespace Reed_Muller_marijuslau
             return false;
         }
 
-        private static int Factorial(int i)
-        {
-            if (i <= 1)
-            {
-                return 1;
-            }
-            return i * Factorial(i - 1);
-        }
-
-        public static int[] GetIntVector(int length, int take)
+        // Funkcija grąžinanti 1-ojo laipsnio vektorius
+        int[] GetIntVector(int length, int take)
         {
             int[] vector = new int[length];
             int index = 0;
@@ -173,6 +166,16 @@ namespace Reed_Muller_marijuslau
             }
 
             return vector;
+        }
+
+        // Faktorialo skaičiavimas
+        static int Factorial(int i)
+        {
+            if (i <= 1)
+            {
+                return 1;
+            }
+            return i * Factorial(i - 1);
         }
     }
 }
